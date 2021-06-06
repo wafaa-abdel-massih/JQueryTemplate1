@@ -46,8 +46,7 @@ $(document).ready(function () {
                     autoSlider();
 
                 });
-            }
-            else {
+            }else {
 
                 $(this).delay(3000).fadeOut(2000, function () {
 
@@ -85,16 +84,14 @@ $(document).ready(function () {
 
             imgShuffle.each(function (i) {
                 if (imgShuffle.eq(i).data("shuffle") !== shaffle) {
+                    
                     imgShuffle.eq(i).fadeOut();
-                    console.log("not equal");
-                }
-                else {
+                }else {
+
                     imgShuffle.eq(i).fadeIn();
                 }
             });
-            // console.log("yes" , imgShuffle.eq(0).data("shuffle"));
-
-        } else {
+        }else {
 
             imgShuffle.each(function (i) {
                 imgShuffle.eq(i).fadeIn();
