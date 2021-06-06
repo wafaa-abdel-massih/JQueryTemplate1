@@ -60,4 +60,45 @@ $(document).ready(function () {
             }
         });
     })();
+
+    
+    // project hover animation
+    $(".our-projects > div").hover(function () {
+        $(this).children(".overlay").slideDown();
+    },
+    function () {
+        $(this).children(".overlay").slideUp();
+    });
+
+    // shuffle projects
+    let imgShuffle = $(".our-projects > div");
+    imgShuffle.each(function () {
+        $(this).fadeIn(1000);
+    });
+
+    $(".projects ul li").on("click", function () {
+        $(".projects ul li.active").removeClass("active");
+        $(this).addClass("active");
+
+        var shaffle = $(this).data("shuffle");
+        if (shaffle !== "all") {
+
+            imgShuffle.each(function (i) {
+                if (imgShuffle.eq(i).data("shuffle") !== shaffle) {
+                    imgShuffle.eq(i).fadeOut();
+                    console.log("not equal");
+                }
+                else {
+                    imgShuffle.eq(i).fadeIn();
+                }
+            });
+            // console.log("yes" , imgShuffle.eq(0).data("shuffle"));
+
+        } else {
+
+            imgShuffle.each(function (i) {
+                imgShuffle.eq(i).fadeIn();
+            });
+        }
+    });
 });
