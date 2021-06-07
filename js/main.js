@@ -8,8 +8,22 @@ $(document).ready(function () {
     var toggleMenu = $("header nav .toggle-menu");
     var menuLinks = $("header nav .links");
 
-    toggleMenu.click(function () {
+    toggleMenu.click(function (e) {
+        e.stopPropagation();
         menuLinks.toggleClass("open");
+    });
+
+    menuLinks.click(function (e) {
+        e.stopPropagation();
+    })
+
+    // click everywhere to close menu links
+    $(document).click(function (event) {
+        if(event.target !== toggleMenu && event.target !== menuLinks) {
+            if(menuLinks.has(".open")){
+                menuLinks.removeClass('open');
+            }
+        }
     });
 
     // adjust home page height 
@@ -67,7 +81,6 @@ $(document).ready(function () {
             }
         });
     })();
-
     
     // project hover animation
     $(".our-projects > div").hover(function () {
