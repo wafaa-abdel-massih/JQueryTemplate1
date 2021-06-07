@@ -4,6 +4,14 @@ $(document).ready(function () {
 
     "use strict";
 
+    // toggle menu
+    var toggleMenu = $("header nav .toggle-menu");
+    var menuLinks = $("header nav .links");
+
+    toggleMenu.click(function () {
+        menuLinks.toggleClass("open");
+    });
+
     // adjust home page height 
     let homeSection = $(".home");
 
@@ -97,5 +105,13 @@ $(document).ready(function () {
                 imgShuffle.eq(i).fadeIn();
             });
         }
+    });
+
+    // trigger nice scroll
+    $("html").niceScroll({
+        cursorcolor: "#1abc9c",
+        cursorwidth: "10px",
+        cursorborder: "1px solid #1abc9c",
+        cursorborderradius: 0
     });
 });
