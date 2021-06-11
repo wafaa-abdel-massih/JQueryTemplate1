@@ -25,7 +25,7 @@ $(document).ready(function () {
             }
         }
     });
-
+    
     // adjust home page height 
     let homeSection = $(".home");
 
@@ -57,7 +57,7 @@ $(document).ready(function () {
     // auto slider
     (function autoSlider() {
 
-        $(".slider .active").each(function () {
+        $(".testi-slider .active").each(function () {
 
             if (!$(this).is(':last-child')) {
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
                     $(this).removeClass("active");
 
-                    $('.slider div').eq(0).addClass("active").fadeIn(2000);
+                    $('.testi-slider div').eq(0).addClass("active").fadeIn(2000);
 
                     autoSlider();
                 });
@@ -118,7 +118,7 @@ $(document).ready(function () {
                 imgShuffle.eq(i).fadeIn();
             });
         }
-    });
+    }); 
 
     // trigger nice scroll
     $("html").niceScroll({
